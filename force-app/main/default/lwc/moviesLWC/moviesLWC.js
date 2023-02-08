@@ -1,25 +1,25 @@
 import { LightningElement, api } from 'lwc';
 
 export default class MoviesLWC extends LightningElement {
-    @api library;
-    @api favourites;
-    @api search;
+    library;
+    movies;
+    favourites;
 
     handleSearchMovies(){
         library = false;
+        movies = true;
         favourites = false;
-        search = true;
     }
 
     handleViewLibrary(){
         library = true;
+        movies = false;
         favourites = false;
-        search = false;
     }
 
     handleViewFavourites(){
         library = false;
+        movies = false;
         favourites = true;
-        search = false;
     }
 }

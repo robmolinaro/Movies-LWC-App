@@ -17,3 +17,6 @@ This file contains several utilities used in the project, for instance JSON dese
 This file contains the callouts to the REST API.
 
 ### LWC Components
+#### moviesLWC
+
+#### viewLibrary

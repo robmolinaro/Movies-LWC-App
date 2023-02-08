@@ -1,32 +1,42 @@
 <template>
-    <div class="wrapper">
-        <header class="header">Movies LWC</header>
-        <section class="content">
-            <div class="columns">
-                <aside class="sidebar-first">
-                    <lightning-button variant="brand" label="SEACH MOVIES" onclick={handleSearchMovies}>
-                        <label> </label>
-                    </lightning-button>
-                    <lightning-button variant="brand-outline" label="VIEW LIBRARY" onclick={handleViewLibrary}>
-                        <label> </label>
-                    </lightning-button>
-                    <lightning-button variant="brand-outline" label="VIEW FAVOURITES" onclick={handleViewFavourites}>
-                        <label> </label>
-                    </lightning-button>
-                </aside>
-                <main class="main">
-                    <template if:true={library}>
-                        <c-view-library></c-view-library>
-                    </template>
-                    <template if:true={favourites}>
-                        <c-view-favourites></c-view-favourites>
-                    </template>
-                    <template if:true={search}>
-                        <c-search-movies></c-search-movies>
-                    </template>
-                </main>
+    <div class="container"> 
+        <div class="sidebar">
+            <div class="row">
+                <lightning-button stretch variant="brand" label="SEACH MOVIES"
+                    onclick={handleSearchMovies}>
+                    <label> </label>
+                </lightning-button>
             </div>
-        </section>
+            <div class="row">
+                <lightning-button stretch variant="brand-outline" label="VIEW LIBRARY"
+                    onclick={handleViewLibrary}>
+                    <label> </label>
+                </lightning-button>
+            </div>
+            <div class="row">
+                <lightning-button stretch variant="brand-outline" label="VIEW FAVOURITES" 
+                    onclick={handleViewFavourites}>
+                    <label> </label>
+                </lightning-button>
+            </div>
+        </div>
+
+        <div class="main">
+            <template lwc:if={library}>
+               <c-view-library></c-view-library>
+            </template>
+            <template lwc:elseif={favourites}>
+                <c-view-library show-favourites=true></c-view-library>
+            </template>
+            <template lwc:elseif={movies}>
+                <c-search-movies></c-search-movies>
+            </template>
+            <template lwc:else>
+                <div>
+                    There's nothing here! Select an option on the side.
+                </div>
+            </template>
+        </div>
     </div>
 
 </template>
