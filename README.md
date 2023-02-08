@@ -1,0 +1,1 @@
+This is a LWC that polls The Movie DB API for data.
