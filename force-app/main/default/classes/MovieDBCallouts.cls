@@ -2,8 +2,7 @@ public with sharing class MovieDBCallouts {
     
     private final String SEARCH_MOVIES_ENDPOINT = 'https://api.themoviedb.org/3/search/movie?api_key=';
     private final String MOVIES_ENDPOINT = 'https://api.themoviedb.org/3/movie/';
-
-
+    
     public static HttpResponse searchMovies(String movieName) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
@@ -16,7 +15,7 @@ public with sharing class MovieDBCallouts {
 
         return null;
     }
-
+    
     public static HttpResponse getMovieById(String movieId) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();

@@ -1,0 +1,32 @@
+<template>
+    <div class="wrapper">
+        <header class="header">Movies LWC</header>
+        <section class="content">
+            <div class="columns">
+                <aside class="sidebar-first">
+                    <lightning-button class="slds-button slds-button_brand" onclick={handleSearchMovies}>
+                        <label>SEARCH MOVIES</label>
+                    </lightning-button>
+                    <lightning-button class="slds-button slds-button_outline-brand" onclick={handleViewLibrary}>
+                        <label>VIEW LIBRARY</label>
+                    </lightning-button>
+                    <lightning-button class="slds-button slds-button_outline-brand" onclick={handleViewFavourites}>
+                        <label>VIEW FAVOURITES</label>
+                    </lightning-button>
+                </aside>
+                <main class="main">
+                    <template if:true={library}>
+                        <c-view-library></c-view-library>
+                    </template>
+                    <template if:true={favourites}>
+                        <c-view-favourites></c-view-favourites>
+                    </template>
+                    <template if:true={search}>
+                        <c-search-movies></c-search-movies>
+                    </template>
+                </main>
+            </div>
+        </section>
+    </div>
+
+</template>
