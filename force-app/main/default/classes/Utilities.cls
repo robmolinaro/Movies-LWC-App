@@ -8,6 +8,8 @@ public with sharing class Utilities {
 
             return jsonResponse;
         }
+
+        return null;
     }
 
 }
