@@ -7,7 +7,6 @@ export default class MoviesLWC extends LightningElement {
     display = false;
 
     handleSearchMovies(event){
-        console.log('clicked search');
         this.library = false;
         this.movies = true;
         this.favourites = false;
@@ -19,7 +18,6 @@ export default class MoviesLWC extends LightningElement {
         this.movies = false;
         this.favourites = false;
         this.display = true;
-        console.log('clicked library');
     }
 
     handleViewFavourites(event){
@@ -27,6 +25,5 @@ export default class MoviesLWC extends LightningElement {
         this.movies = false;
         this.favourites = true;
         this.display = true;
-        console.log('clicked favourites');
     }
 }

@@ -20,3 +20,5 @@ This file contains the callouts to the REST API.
 #### moviesLWC
 
 #### viewLibrary
+
+#### searchMovies

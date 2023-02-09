@@ -1,5 +1,17 @@
 <template>
-    <div class="container" style="background-color:lightslategray">
-        Movies!
+    <div class="container" style="background-color:rgb(140, 176, 212)">
+        <lightning-input type="text" variant="label-hidden" label="Enter Movie Name:" placeholder="type here..." onchange={handleMovieInputChange} value={movieName}></lightning-input>
+        <h1 class="slds-text-heading_large">You entered: <small>{movieName}</small></h1>
+        <template if:true={movies.data}>
+            <div>
+                <h2 class="slds-text-heading_small">There's movies here...</h2>
+                <p>{movies.data}</p>
+            </div>
+        </template>
+        <template if:true={movies.error}>
+            <div>
+                <h2 class="slds-text-heading_medium">There's errors here: <small>{movies.error}</small></h2>
+            </div>
+        </template>
     </div>
 </template>
