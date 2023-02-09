@@ -22,16 +22,16 @@
         </div>
 
         <div class="main">
-            <template lwc:if={library}>
+            <template if:true={library}>
                <c-view-library></c-view-library>
             </template>
-            <template lwc:elseif={favourites}>
+            <template if:true={favourites}>
                 <c-view-library show-favourites=true></c-view-library>
             </template>
-            <template lwc:elseif={movies}>
+            <template if:true={movies}>
                 <c-search-movies></c-search-movies>
             </template>
-            <template lwc:else>
+            <template if:false={display}>
                 <div>
                     There's nothing here! Select an option on the side.
                 </div>

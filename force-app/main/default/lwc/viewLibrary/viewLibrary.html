@@ -1,3 +1,10 @@
 <template>
-    <div class="container" style="background-color:blue"></div>
+    <div class="container" style="background-color:lightskyblue">
+        <template if:true={showFavourites}>
+            Favourites!
+        </template>
+        <template if:false={showFavourites}>
+            Library!
+        </template>
+    </div>
 </template>
